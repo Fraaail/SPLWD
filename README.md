@@ -85,8 +85,6 @@ The SPLWD system follows a three-tier web application architecture:
 
 ## Technologies Used
 
-## Technologies Used
-
 ### Backend Technologies
 - **PHP 8.x**: Modern language features and performance improvements
 - **MySQL 8.x**: Primary data storage with InnoDB engine for ACID compliance
@@ -144,9 +142,12 @@ Ensure the following software is installed on your system:
    ```
 
 4. **Database Setup**
+   The application automatically creates the database and imports the schema on first run. Ensure your MySQL server is running and credentials are configured in `.env`.
+
+   If you prefer manual setup:
    - Create a new MySQL database named `sc_district`
    - Create a database user with appropriate privileges
-   - Import the database schema from `database/sc_district.sql`
+   - The schema will be imported automatically on app start
 
 5. **Configure Environment Variables**
    Update the `.env` file with your database connection details:
@@ -234,42 +235,51 @@ SPLWD/
 │   └── TechnicalDocumentation.md # Technical documentation
 ├── phpunit.xml                 # PHPUnit configuration
 ├── src/
-│   ├── accomplishment_print.php
+│   ├── .env                     # Environment configuration (gitignored)
+│   ├── .env.example             # Environment configuration template
+│   ├── .phpunit.result.cache    # PHPUnit test cache
 │   ├── add_account.php
 │   ├── admin/                   # Administrator interface
 │   ├── composer.json
+│   ├── composer.lock
 │   ├── connect.php              # Database connection
-│   ├── convert.php
 │   ├── css/                     # Stylesheets
 │   ├── database/
 │   │   └── sc_district.sql      # Database schema
 │   ├── district_admin/          # District administrator interface
-│   ├── doc.php
 │   ├── dompdf/                  # PDF generation library
 │   ├── forgot_password.php
-│   ├── generate_pdf.php
-│   ├── htmlTodoc.class.php
 │   ├── img/                     # Images and assets
-│   ├── index.php                # Main entry point
+│   ├── index.php                # Main entry point (includes auto DB init)
+│   ├── init_database.php        # Automatic database initialization
 │   ├── js/                      # JavaScript files
 │   ├── logout.php
+│   ├── Mail/                    # Email handling library
 │   ├── nav.php                  # Navigation component
 │   ├── otp_verification.php
 │   ├── parent/                  # Parent interface
+│   ├── phpunit.xml              # PHPUnit configuration
 │   ├── principal/               # Principal interface
 │   ├── reset_password.php
+│   ├── scss/                    # SCSS source files
 │   ├── secretary/               # Secretary interface
 │   ├── session.php              # Session management
 │   ├── signup.php
 │   ├── sms.php
-│   ├── smstype.php
-│   ├── stile.css
 │   ├── teacher/                 # Teacher interface
 │   ├── tests/                   # PHPUnit test files
-│   ├── update_new_student.php
-│   ├── upload_file.php
 │   └── vendor/                  # Composer dependencies
 ```
+
+## Changelog
+
+### Version 2.0 (December 23, 2025)
+- **Automatic Database Initialization**: Implemented `init_database.php` for seamless DB creation and schema import on app start
+- **Repository Cleanup**: Removed 30+ redundant/unused files (e.g., accomplishment_print.php, htmlTodoc.class.php, duplicate files, unused images)
+- **Code Quality Improvements**: Fixed broken paths, typos in image references, and inconsistent JS includes
+- **Configuration Updates**: Updated `.env.example` with proper database keys and environment variables
+- **Documentation Overhaul**: Professionalized README with comprehensive sections, removed emojis, added architecture details
+- **Testing**: Maintained 220 passing tests with 100% success rate
 
 ## Contributing
 
