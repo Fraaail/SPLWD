@@ -5,157 +5,201 @@
 [![MySQL Version](https://img.shields.io/badge/MySQL-8.0%2B-orange.svg)](https://mysql.com)
 [![Tests](https://img.shields.io/badge/Tests-220%20passed-green.svg)](./tests)
 
-## 📋 Project Description
+## Table of Contents
 
-The **SPLWD (Student Profiling for Learners with Disabilities) System Upgrade** is a comprehensive modernization of an existing web-based student profiling system. This upgraded system serves the Sta. Cruz District of Laguna, specifically designed to digitize and centralize the management of LWD (Learners with Disabilities) student records, replacing traditional paper-based filing systems that are vulnerable to natural disasters.
+- [Project Description](#project-description)
+- [Features](#features)
+- [System Architecture](#system-architecture)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-The system provides a secure, role-based platform for managing student profiles, educational documents, progress tracking, and parent engagement across multiple elementary schools in the district.
+## Project Description
 
-## ✨ Features Added / Enhanced
+The SPLWD (Student Profiling for Learners with Disabilities) System Upgrade is a comprehensive modernization of an existing web-based student profiling system. This upgraded system serves the Sta. Cruz District of Laguna, specifically designed to digitize and centralize the management of LWD (Learners with Disabilities) student records, replacing traditional paper-based filing systems that are vulnerable to natural disasters.
 
-### 🔧 Code Quality Improvements
-- **Codebase Cleaning**: Removed redundant and unused code segments
-- **Refactoring**: Implemented modern design patterns (MVC, Repository, Factory)
-- **Code Standards**: Consistent naming conventions and formatting
-- **Uncluttered Files**: Improved the source code readability by removing unnecessary files and cluttered code structure
-- **Improved System Scalability**: Enabled compatibility for the system to support future upgrades and newer technologies
+The system provides a secure, role-based platform for managing student profiles, educational documents, progress tracking, and parent engagement across multiple elementary schools in the district, including Sta. Cruz Central Elementary School, Bagumbayan Elementary School, and Gatid Elementary School.
 
-### 🔒 Security Enhancements
-- **Environment Configuration**: Moved hardcoded credentials to .env files
+### Objectives
 
-### 🎨 UI/UX Improvements
-- **Modern Interface**: Updated typography, padding, and element positioning
-- **User Experience**: Streamlined workflows and improved navigation
+- Modernize legacy codebase with PHP 8.x and current best practices
+- Improve system performance, security, and maintainability
+- Enhance user interface and experience
+- Implement comprehensive testing with PHPUnit
+- Ensure compliance with data privacy regulations
 
-### 📊 Core System Features (Non-upgrades)
-- **Student Profile Management**: Digital storage and retrieval of LWD student information
-- **Document Management**: Upload and organization of IEP, ILP, ILMP, and BIR documents
-- **Progress Tracking**: Quarterly assessment and monitoring with chart visualizations
-- **Multi-user Support**: Role-based access for Administrators, Principals, Teachers, and Parents
-- **Reporting**: Comprehensive enrollment reports and progress summaries
+## Features
 
-## 🛠️ Technologies Used
+### Core System Features
+
+- **Student Profile Management**: Digital storage and retrieval of LWD student information including personal details, enrollment status, and educational history
+- **Document Management**: Upload, storage, and organization of educational documents including IEP (Individual Educational Plan), ILP (Individual Learner's Profile), ILMP (Individual Learning Monitoring Plan), and BIR (Behavior Intervention Report)
+- **Progress Tracking**: Quarterly assessment and monitoring with chart visualizations for student development
+- **Multi-user Support**: Role-based access control for Administrators, District Administrators, Principals, Secretaries, Teachers, and Parents
+- **Reporting**: Comprehensive enrollment reports, progress summaries, and audit logs
+- **Parent Engagement**: Limited access for parents to view child's progress and submit observations
+
+### Upgrade Enhancements
+
+#### Code Quality Improvements
+- Codebase cleaning: Removed redundant and unused code segments
+- Refactoring: Implemented modern design patterns (MVC, Repository, Factory)
+- Code standards: Consistent naming conventions and formatting
+- Improved scalability: Enhanced compatibility for future upgrades and newer technologies
+
+#### Security Enhancements
+- Environment configuration: Moved hardcoded credentials to .env files
+- Secure authentication and authorization mechanisms
+- Data encryption for sensitive information
+- Compliance with Data Privacy Act requirements
+
+#### UI/UX Improvements
+- Modern interface: Updated typography, padding, and element positioning
+- Responsive design: Mobile-friendly interface using Bootstrap
+- Streamlined workflows: Improved navigation and user experience
+
+## System Architecture
+
+The SPLWD system follows a three-tier web application architecture:
+
+### Presentation Layer
+- Responsive web interface built with HTML5, CSS3, and JavaScript
+- Bootstrap framework for consistent UI/UX design
+- Role-based dashboards for different user types (Admin, District Admin, Principal, Secretary, Teacher, Parent)
+
+### Application Layer
+- PHP 8.x backend with MVC architecture pattern
+- RESTful API design for data operations
+- Session management and authentication middleware
+- File upload and document processing capabilities
+
+### Data Layer
+- MySQL database with normalized schema design
+- Secure file storage system for document management
+- Automated backup and recovery mechanisms
+
+## Technologies Used
+
+## Technologies Used
 
 ### Backend Technologies
-- **PHP 8.x** - Modern language features and performance improvements
-- **MySQL 8.x** - Primary data storage with InnoDB engine
-- **Composer** - Dependency management and PSR-4 autoloading
-- **PDO** - Database abstraction layer for security
+- **PHP 8.x**: Modern language features and performance improvements
+- **MySQL 8.x**: Primary data storage with InnoDB engine for ACID compliance
+- **Composer**: Dependency management and PSR-4 autoloading
+- **PDO**: Database abstraction layer for security and portability
+- **PHPOffice/PHPWord**: Document generation and processing
 
 ### Frontend Technologies
-- **HTML5** - Semantic markup structure
-- **CSS3** - Modern styling with responsive design
-- **Bootstrap 5.x** - Responsive CSS framework
-- **JavaScript (ES6+)** - Dynamic interactions and functionality
-- **jQuery 3.x** - DOM manipulation and AJAX operations
-- **Chart.js** - Data visualization and progress charts
-- **Font Awesome** - Consistent icon library
+- **HTML5**: Semantic markup structure
+- **CSS3**: Modern styling with responsive design
+- **Bootstrap 5.x**: Responsive CSS framework
+- **JavaScript (ES6+)**: Dynamic interactions and functionality
+- **jQuery 3.x**: DOM manipulation and AJAX operations
+- **Chart.js**: Data visualization and progress charts
+- **Font Awesome**: Consistent icon library
 
 ### Development & Testing Tools
-- **PHPUnit** - Automated testing framework (220 test cases, 962 assertions)
-- **Git** - Version control system
-- **Environment Variables** - Configuration management via .env files
-
-## 📦 Installation Instructions
+- **PHPUnit**: Automated testing framework (220 test cases, 962 assertions)
+- **Git**: Version control system
+- **Environment Variables**: Configuration management via .env files
 
 ### System Requirements
-
-**Minimum Server Specifications:**
 - **CPU**: 2 cores, 2.4 GHz
 - **RAM**: 4 GB minimum, 8 GB recommended
 - **Storage**: 10 GB available space
 - **Network**: Stable internet connection
+- **Software**: PHP >= 8.0, MySQL >= 8.0, Apache >= 2.4 or Nginx >= 1.18, Composer >= 2.0
 
-**Software Dependencies:**
-```bash
-PHP >= 8.0
-MySQL >= 8.0
-Apache >= 2.4 or Nginx >= 1.18
-Composer >= 2.0
-```
+## Installation
+
+### Prerequisites
+Ensure the following software is installed on your system:
+- PHP 8.0 or higher
+- MySQL 8.0 or higher
+- Apache 2.4+ or Nginx 1.18+
+- Composer 2.0+
 
 ### Installation Steps
 
-**Step 1: Clone Repository**
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/VoxDroid/SPLWD.git
+   cd SPLWD
+   ```
 
+2. **Install Dependencies**
+   ```bash
+   composer install
+   ```
+
+3. **Environment Configuration**
+   ```bash
+   cp .env.example .env
+   # Edit .env file with your database credentials
+   ```
+
+4. **Database Setup**
+   - Create a new MySQL database named `sc_district`
+   - Create a database user with appropriate privileges
+   - Import the database schema from `database/sc_district.sql`
+
+5. **Configure Environment Variables**
+   Update the `.env` file with your database connection details:
+   ```
+   DB_PASSWORD=Your_Database_Password
+   DB_SERVERNAME=localhost
+   DB_USERNAME=your_db_user
+   DB_NAME=sc_district
+   ```
+
+6. **File Permissions**
+   Set appropriate permissions for web server access:
+   ```bash
+   sudo chown -R www-data:www-data /path/to/SPLWD
+   sudo chmod -R 755 /path/to/SPLWD
+   ```
+
+## Usage
+
+### User Roles and Permissions
+
+1. **System Administrator**: Full system access and user management
+2. **District Administrator**: District-level oversight and multi-school management
+3. **School Principals**: School-level oversight and reporting
+4. **Principal's Secretary**: User account management and administrative support
+5. **Teachers**: Student data entry, document upload, and progress tracking
+6. **Parents/Guardians**: Limited access to view child's progress and add observations
+
+### Running the Application
+
+For development:
 ```bash
-git clone https://github.com/VoxDroid/SPLWD.git
-cd SPLWD
-```
-
-**Step 2: Install Dependencies**
-
-```bash
-composer install # Skip if you're running on windows
-```
-
-**Step 3: Environment Configuration**
-
-```bash
-cp .env.example .env
-# Edit .env file with your database credentials
-```
-
-**Step 4: Database Setup**
-
-```sql
-# Skip if you're running on windows, just skip directly and import the database file
-CREATE DATABASE sc_district;
-CREATE USER 'splwd_user'@'localhost' IDENTIFIED BY 'your_secure_password';
-GRANT ALL PRIVILEGES ON sc_district.* TO 'splwd_user'@'localhost';
-FLUSH PRIVILEGES;
-```
-
-**Step 5: Configure Environment Variables**
-
-```bash
-# Edit .env file
-DB_PASSWORD=Your_Database_Password
-DB_SERVERNAME=localhost
-DB_USERNAME=root
-DB_NAME=sc_district
-```
-
-**Step 6: Run Database Migrations**
-
-```bash
-# Import database schema
-mysql -u splwd_user -p sc_district < database/schema.sql
-```
-
-## 🚀 How to Use / Run the Project
-
-### Development Environment
-
-```bash
-# Install development dependencies, skip if you're running on windows
-composer install --dev
-
-# Run tests to verify setup
-./vendor/bin/phpunit
-
-# Start local development server
 php -S localhost:8000
 ```
 
-### Production Deployment
+For production, deploy to a web server with PHP support.
 
-```bash
-# Install production dependencies, skip if you're running on windows
-composer install --no-dev --optimize-autoloader
+### Key Workflows
 
-# Set proper file permissions
-sudo chown -R www-data:www-data /path/to/SPLWD
-sudo chmod -R 755 /path/to/SPLWD
-```
+- **Student Enrollment**: Teachers and administrators can create and manage student profiles
+- **Document Upload**: Secure upload and storage of educational documents
+- **Progress Monitoring**: Quarterly assessments with visual progress tracking
+- **Reporting**: Generate comprehensive reports for stakeholders
+- **Parent Communication**: Parents can view progress and submit feedback
 
-### User Access Levels
+## Testing
 
-1. **System Administrator**: Full system access and user management
-2. **School Principals**: School-level oversight and reporting
-3. **Principal's Secretary**: User account management and administrative support
-4. **Teachers**: Student data entry, document upload, and progress tracking
-5. **Parents/Guardians**: Limited access to view child's progress and add observations
+The project includes comprehensive testing with PHPUnit:
+
+- **Total Test Cases**: 220
+- **Total Assertions**: 962
+- **Test Success Rate**: 100%
+- **Code Coverage**: >98% for critical components
 
 ### Running Tests
 
@@ -164,100 +208,94 @@ sudo chmod -R 755 /path/to/SPLWD
 composer test
 
 # Run specific test file
-composer test test/specific_test_file.php
+./vendor/bin/phpunit tests/specific_test_file.php
 ```
 
-## 🎥 Demo Video Link
+### Test Categories
+- Unit Tests: Individual component validation
+- Integration Tests: Database and API interaction verification
+- Functional Tests: End-to-end user workflow testing
+- Security Tests: Authentication and authorization validation
 
-[**Demo Video (SPLWD)**] - [Google Drive Link (Click Here)](https://drive.google.com/drive/folders/1ODp6i5pN9Y004Q_SLVqga3lvy5K4MK8U?usp=sharing)
+## Project Structure
 
-## 📁 Folder Structure Description
-
-```plaintext
+```
 SPLWD/
-├── docs/                         # Project documentation
-│   ├── SRS.pdf                        # Software Requirements Specification
-│   └── TechnicalDocumentation.pdf     # Technical documentation
+├── CODE_OF_CONDUCT.md          # Code of conduct guidelines
+├── CONTRIBUTING.md             # Contribution guidelines
+├── LICENSE                     # MIT License
+├── README.md                   # This file
+├── SECURITY.md                 # Security policy
+├── SUPPORT.md                  # Support information
+├── composer.json               # PHP dependencies
+├── composer.lock               # Locked dependency versions
+├── docs/
+│   ├── SRS.md                  # Software Requirements Specification
+│   └── TechnicalDocumentation.md # Technical documentation
+├── phpunit.xml                 # PHPUnit configuration
 ├── src/
-│    ├── database/                     # Database-related files
-│    │   └── sc_district.sql           # Database file
-│    ├── tests/                        # PHPUnit test files
-│    │   └── sub/                      # Sub unit tests
-│    ├── vendor/                       # Composer dependencies
-│    ├── .env.example                  # Environment configuration template
-│    ├── .env                          # Environment configuration (not in repo)
-│    ├── composer.json                 # PHP dependencies
-│    ├── composer.lock                 # Locked dependency versions
-│    ├── phpunit.xml                   # PHPUnit configuration
-│    ├── .gitignore                    # Git ignore rules
-│    ├── index.php                     # Main application entry point
-│    ├── principal/                    # Principal user interface
-│    ├── secretary/                    # Secretary user interface
-│    └── teacher/                      # Teacher user interface
-├── .github/                      # GitHub templates and workflows
-│   └── PULL_REQUEST_TEMPLATE.md  # PR template
-├── LICENSE                       # MIT License file
-├── CONTRIBUTING.md               # Contribution guidelines
-├── CODE_OF_CONDUCT.md            # Code of conduct
-├── SECURITY.md                   # Security policy
-└── SUPPORT.md                    # Support information
+│   ├── accomplishment_print.php
+│   ├── add_account.php
+│   ├── admin/                   # Administrator interface
+│   ├── composer.json
+│   ├── connect.php              # Database connection
+│   ├── convert.php
+│   ├── css/                     # Stylesheets
+│   ├── database/
+│   │   └── sc_district.sql      # Database schema
+│   ├── district_admin/          # District administrator interface
+│   ├── doc.php
+│   ├── dompdf/                  # PDF generation library
+│   ├── forgot_password.php
+│   ├── generate_pdf.php
+│   ├── htmlTodoc.class.php
+│   ├── img/                     # Images and assets
+│   ├── index.php                # Main entry point
+│   ├── js/                      # JavaScript files
+│   ├── logout.php
+│   ├── nav.php                  # Navigation component
+│   ├── otp_verification.php
+│   ├── parent/                  # Parent interface
+│   ├── principal/               # Principal interface
+│   ├── reset_password.php
+│   ├── secretary/               # Secretary interface
+│   ├── session.php              # Session management
+│   ├── signup.php
+│   ├── sms.php
+│   ├── smstype.php
+│   ├── stile.css
+│   ├── teacher/                 # Teacher interface
+│   ├── tests/                   # PHPUnit test files
+│   ├── update_new_student.php
+│   ├── upload_file.php
+│   └── vendor/                  # Composer dependencies
 ```
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions to the SPLWD project! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests, report issues, and contribute to the codebase.
 
-## 📋 Code of Conduct
+### Development Setup
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests: `composer test`
+5. Submit a pull request
 
-This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+## License
 
-## 🔒 Security
+This project is licensed under the [MIT License](LICENSE). See the LICENSE file for details.
 
-For security concerns, please review our [Security Policy](SECURITY.md) and report vulnerabilities responsibly.
-
-## 💬 Support
-
-Need help? Check out our [Support Guide](SUPPORT.md) for various ways to get assistance.
-
-## 👥 Contributors
-
-### Project Lead & Development Team
-
-- **Mhar Andrei C. Macapallag** - Project Lead, Full-Stack Developer, Documentation Owner
-- **Seanrei Ethan M. Valdeabella** - System Developer, Designer
-- **Eldi Nill L. Driz** - Quality Assurance
-- **Vanesse V. Reyes** - Tester, Documentation
-- **Keayon Ivan V. Romero** - Tester
-- **Carlo James G. Arat** - [Tester](https://archlinux.org/)
-
-
-### Acknowledgments
-
-- **Sta. Cruz District of Laguna** - Project stakeholders and end users
-- **Educational Institutions**: Sta. Cruz Central Elementary School, Bagumbayan Elementary School, Gatid Elementary School
-- **Testing Team** - Quality assurance and user acceptance testing
-
-## 📊 Project Statistics
-
-- **Total Test Cases**: 220
-- **Total Assertions**: 962
-- **Test Success Rate**: 100%
-- **Code Coverage**: >98% for critical components
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE). Use, modify, and distribute it freely per the license terms.
-
-## 📞 Contact
+## Contact
 
 For technical support, bug reports, or feature requests:
 
 - **Email**: izeno.contact@gmail.com
 - **Project Repository**: [github.com/VoxDroid/SPLWD](https://github.com/VoxDroid/SPLWD)
-- **Documentation**: See `/docs` folder for detailed technical documentation
+- **Documentation**: See `/docs` folder for detailed SRS and technical documentation
 
 ---
 
-> **Last Updated**: May 28, 2025  
-> **Version**: 1.1  
-> **Status**: Production Ready
+**Last Updated**: December 23, 2025  
+**Version**: 2.0  
+**Status**: Production Ready

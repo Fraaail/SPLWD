@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+// Initialize database if needed
+include 'init_database.php';
+
 // Handle login logic
 if (isset($_POST['login'])) {
     include 'connect.php';

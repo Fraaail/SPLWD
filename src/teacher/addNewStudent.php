@@ -54,7 +54,7 @@
               <div class="col-md-10 bg-light mt-5 border">
                 <div class="row">
                   <div class="card p-5 col-md-5" style="width: 20rem;">
-                    <img src="../img/banner2.jafif" onerror=this.src="../img/profile.png" alt="" id="thumb" class="rounded-circle img-thumbnail" width="400">
+                    <img src="../img/banner2.jfif" onerror=this.src="../img/profile.png" alt="" id="thumb" class="rounded-circle img-thumbnail" width="400">
                     <div class="card-body">
                       <div class="custom-file">
                         <div id="wrapper">
@@ -129,7 +129,7 @@
               <div class="col-md-10 bg-light mt-5 border">
                 <div class="row">
                   <div class="card p-5 col-md-5" style="width: 20rem;">
-                    <img src="../img/banner2.jafif" onerror=this.src="../img/profile.png" alt="" class="rounded-circle img-thumbnail" width="400">
+                    <img src="../img/banner2.jfif" onerror=this.src="../img/profile.png" alt="" class="rounded-circle img-thumbnail" width="400">
                     <div class="card-body">
                       <div class="custom-file">
                       </div>
@@ -950,7 +950,7 @@
               <div class="col-md-10 bg-light mt-5 border">
                 <div class="row">
                   <div class="card p-5 col-md-5" style="width: 20rem;">
-                    <img src="../img/banner2.jafif" onerror=this.src="../img/profile.png" alt="" class="rounded-circle img-thumbnail" width="400">
+                    <img src="../img/banner2.jfif" onerror=this.src="../img/profile.png" alt="" class="rounded-circle img-thumbnail" width="400">
                     <div class="card-body">
                       <div class="custom-file">
                       </div>
